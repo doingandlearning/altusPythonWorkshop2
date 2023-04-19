@@ -15,6 +15,9 @@ even_numbers = list(filter(is_even, numbers))
 
 even_numbers_comp = [num for num in numbers if is_even(num)]
 
+print([x+1 if x>5 else x+2 for x in numbers])
+
+# Tenary in list comp 
 print(even_numbers)
 print(even_numbers_comp)
 
