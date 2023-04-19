@@ -28,7 +28,7 @@ from functools import reduce
 def multiply(a,b):
   return a * b
 
-print(reduce(multiply, numbers))
+print(reduce(multiply, numbers, 1))
 
 
 # concurrency
