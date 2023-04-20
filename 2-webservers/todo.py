@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, make_response
 from flask_restful import Resource, Api
+from middleware import with_header_auth
 
 app = Flask(__name__)
 api = Api(app)
@@ -47,6 +48,7 @@ def get_todos():
   return response
 
 @app.post("/todos")
+@with_header_auth
 def post_todos():
   data = request.json
   id = len(todos) + 1 # Get it from the database!!
