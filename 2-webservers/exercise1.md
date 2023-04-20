@@ -9,6 +9,11 @@ In this exercise, you will create a simple Flask web application with multiple r
 - Flask library installed (use pip install Flask if not already installed)
 
 ## Instructions:
+- Activate your virtual environment and install Flask
+
+```bash
+pip install flask
+```
 
 - Create a new Python file named app.py and import the required Flask module.
 - Create a route for the main page (root URL) that returns a welcome message.
