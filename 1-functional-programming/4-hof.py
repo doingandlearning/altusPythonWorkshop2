@@ -1,4 +1,7 @@
 
+import operator
+
+
 def apply(func, x, y):
   return func(x,y)
 
@@ -25,7 +28,7 @@ def square(x):
   return x * x
 
 def increment(x):
-  return x + 1
+  return operator.add(x, 1)
 
 square_then_increment = compose(increment, square)
 incremenet_then_square = compose(square, increment)
