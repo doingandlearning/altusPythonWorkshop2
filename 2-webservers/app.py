@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify, Response, make_response
 
 # Hello, world!
 app = Flask(__name__)
@@ -11,11 +11,17 @@ def hello_world():
   if api_key == "super-secret-password":
     return "Time for coffee (if there are no questions)"
   else:
-    return "<h1>Hello, world!!</h1>"
+    resp = Response()
+    resp.headers["x-coffee-time"] = 'now'
+    return jsonify({"message": "now"}), 404
+
+
 
 @app.route("/goodbye")
 def goodbye_world():
-  return "<h1>Goodbye cruel, world!!</h1>"
+  response = make_response(jsonify({"message": "Goodbye cruel, world!"}))
+  response.headers["x-other-message"] = "It's not that bad!"
+  return response
 
 @app.route("/hello/<name>")
 def say_hello(name):
