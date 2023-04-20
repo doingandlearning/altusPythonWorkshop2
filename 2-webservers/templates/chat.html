@@ -30,7 +30,7 @@
                     document.getElementById("chat").innerHTML += `You: ${text}\n`;                    
                     
                     // Emit a message to the 'send_message' socket
-                    socket.emit('send_message', {'text':text, 'user':  userName});
+                    socket.emit('send_message', {'text':text, 'user':  userName, 'numOfFollowers': 10});
 
                     // Set the textfield input to empty
                     document.getElementById("textfield_input").value = "";

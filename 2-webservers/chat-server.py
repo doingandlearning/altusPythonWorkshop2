@@ -8,3 +8,11 @@ socketio = SocketIO(app, logger=True)
 @app.get("/chat/<username>")
 def get_chat_page(username):
   return render_template("chat.html", username=username)
+
+@socketio.on("send_message")
+def message_received(data):
+  print(data['numOfFollowers'])
+  emit('message', {'text': data['text'], 'user': data['user']}, broadcast=True)
+
+if __name__ == "__main__":
+  socketio.run(app, port=5000, debug=True)
