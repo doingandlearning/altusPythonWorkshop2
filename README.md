@@ -22,3 +22,6 @@
 - Unit and functional tests 
 - pytest
 - AWS Power tools 
+
+
+https://frameworktraining.typeform.com/to/pYbaGDbm
