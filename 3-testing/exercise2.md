@@ -1,3 +1,5 @@
+To run test use `pytest <filename`.
+
 1. Write a parameterized test for a subtraction function
 
 Implement a my_subtract function that subtracts two numbers and returns the result. Write a parameterized test using pytest.mark.parametrize to test various cases.

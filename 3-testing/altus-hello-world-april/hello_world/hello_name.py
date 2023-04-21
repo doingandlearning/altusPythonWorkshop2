@@ -1,0 +1,9 @@
+import json
+
+def hello_name(name):
+    return {"statusCode": 200, "body": json.dumps({"message": f"Hello {name}!"})}
+
+def lambda_handler(event, context):
+    # /hello/<name>
+    name = event["pathParameters"]["name"]
+    return hello_name(name)
