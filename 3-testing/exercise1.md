@@ -2,6 +2,11 @@ Objective: Create a Python function `is_palindrome(input_string)` that checks if
 
 A palindrome is a word, phrase, number, or other sequences of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization).
 
+Hannah
+  racecar
+
+	madam i'm adam
+
 # Possible steps:
 1. Write a failing test for the `is_palindrome` function
 2. Write the `is_palindrome` function to make the test pass

@@ -1,3 +1,4 @@
+import math
 import unittest
 
 # 5 USD x 2 = 10 USD
@@ -33,6 +34,10 @@ class TestMoney(unittest.TestCase):
     # Assert
     self.assertEqual(20, twentyEuros.amount)
     self.assertEqual("EUR", twentyEuros.currency)
+
+  def test_pi(self):
+    self.assertAlmostEqual(22/7, math.pi, places=2)
+    self.assertEqual(math.pi + 1, 1 + math.pi)
 
 if __name__ == "__main__":
   unittest.main()
