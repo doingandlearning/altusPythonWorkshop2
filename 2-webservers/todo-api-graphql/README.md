@@ -15,6 +15,28 @@ Install required packages
 pip install -r requirements.txt
 ```
 
+Initialize the database:
+
+```bash
+python
+from app import db
+db.create_all()
+```
+
+If you want to, add a few todos:
+
+```bash
+python
+from datetime import datetime
+from api.models import Todo
+today = datetime.today().date()
+todo = Todo(description="Learn GraphQL", due_date=today, completed=False)
+todo.to_dict()
+{'id': None, 'completed': False, 'description': 'Run a marathon', 'due_date': '2022-04-20'}
+db.session.add(todo)
+db.session.commit()
+```
+
 ## Running the app
 
 ```bash
@@ -45,8 +67,20 @@ query myQuery{
 }
 ```
 
-To add a new todo, type a mutation in the editor, similar to the one below:
+Fetch a single todo:
+
+```graphql
+query fetchTodo {
+  todo(todoId: "1") {
+    success
+    errors
+    todo { id completed description dueDate }
+  }
+}
 ```
+
+To add a new todo, type a mutation in the editor, similar to the one below:
+```graphql
 mutation newTodo {
   createTodo(input:{description:"Go to the gym", dueDate:"25-10-2021"}) {
     description
@@ -55,3 +89,4 @@ mutation newTodo {
   }
 }
 ```
+
