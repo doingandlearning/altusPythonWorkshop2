@@ -24,7 +24,7 @@ type TodosResult {
 
 type Query {
     todos: TodosResult!
-    todo(todoId: ID!): TodoResult
+    todo(todoId: ID!): TodoResult!
 }
 
 type deleteTodoResult {
