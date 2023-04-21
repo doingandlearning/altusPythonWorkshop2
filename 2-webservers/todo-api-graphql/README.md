@@ -18,8 +18,7 @@ pip install -r requirements.txt
 Initialize the database:
 
 ```bash
-python
-from app import db
+flask shell
 db.create_all()
 ```
 
