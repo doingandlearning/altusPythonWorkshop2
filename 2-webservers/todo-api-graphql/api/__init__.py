@@ -1,6 +1,5 @@
 import os
 
-from ariadne import QueryType
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -11,7 +10,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-query = QueryType()
 
 
 @app.route('/')

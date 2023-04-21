@@ -9,3 +9,6 @@ def with_header_auth(func):
             return func(*arg,**kwargs)
         return jsonify({"message": "Auth key required"}), 403
     return decorated_func
+
+
+# Relevant docs: https://flask.palletsprojects.com/en/2.2.x/patterns/viewdecorators/

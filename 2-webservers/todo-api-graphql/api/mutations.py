@@ -7,7 +7,7 @@ from api.models import Todo
 
 
 @convert_kwargs_to_snake_case
-def resolve_create_todo(obj, info, description, due_date):
+def resolve_create_todo(obj, info, description, due_date): 
     try:
         due_date = datetime.strptime(due_date, '%d-%m-%Y').date()
         todo = Todo(
@@ -25,6 +25,11 @@ def resolve_create_todo(obj, info, description, due_date):
             "errors": [f"Incorrect date format provided. Date should be in "
                        f"the format dd-mm-yyyy"]
         }
+    except Exception as error:
+        payload = {
+            "success": False,
+            "errors": [str(error)]
+        }        
 
     return payload
 
